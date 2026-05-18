@@ -1,5 +1,35 @@
 
+import { useState } from 'react';
 import data from './../assets/json/Projects.json';
+
+const sortProjects = (
+        array: any[],
+        sortBy: 'name' | 'date' | 'ai' = 'name',
+        reversed: boolean = false
+    ): any[] => {
+        let sortedList = structuredClone(array);
+        switch (sortBy) {
+            case 'name':
+                sortedList.sort((a, b) => {
+                    if (reversed) return b.name.localeCompare(a.name);
+                    else return a.name.localeCompare(b.name);
+                });
+                break;
+            case 'date':
+                sortedList.sort((a, b) => {
+                    if (reversed) return b.timesort - a.timesort;
+                    else return a.timesort - b.timesort;
+                });
+                break;
+            case 'ai':
+                sortedList.sort((a, b) => {
+                    if (reversed) return b.aiuse - a.aiuse;
+                    else return a.aiuse - b.aiuse;
+                });
+                break;
+        }
+        return sortedList;
+    };
 
 // Top 3 Projects
 
@@ -19,43 +49,50 @@ export default function Projects(
     { id }: PropsProjects
 ) {
 
-    let projects = structuredClone(data);
+    const [sortBy, setSortBy] = useState<'name' | 'date' | 'ai'>("date");
+    const [sortInversed, setSortInverted] = useState(false);
+    const [projectArray, setProjectArray] = useState(
+        sortProjects(
+            structuredClone(data),
+            sortBy,
+            sortInversed
+        )
+    );
 
-    const sortProjects = (
-        sortBy: 'name' | 'date' | 'ai' = 'name',
-        reversed: boolean = false
-    ): void => {
-        switch (sortBy) {
-            case 'name':
-                projects.sort((a, b) => {
-                    if (reversed) return b.name.localeCompare(a.name);
-                    else return a.name.localeCompare(b.name);
-                });
-                break;
-            case 'date':
-                projects.sort((a, b) => {
-                    if (reversed) return b.timesort - a.timesort;
-                    else return a.timesort - b.timesort;
-                });
-                break;
-            case 'ai':
-                projects.sort((a, b) => {
-                    if (reversed) return b.aiuse - a.aiuse;
-                    else return a.aiuse - b.aiuse;
-                });
-                break;
-        }
-    };
-
-    sortProjects("ai", true);
-
-    console.log(projects);
+    const handleSort = () => {
+        const sortedList = sortProjects(
+            projectArray,
+            sortBy,
+            sortInversed
+        );
+        setProjectArray(sortedList);
+    }
 
     return (
         <div
             id={id}
         >
             Projects Section
+            <button
+                onClick={() => {
+                    setSortInverted(!sortInversed);
+                    handleSort();
+                    console.log(sortInversed);
+                }}
+            >
+                Inverse List
+            </button>
+            {
+                projectArray.map(project => (
+                    <div
+                        key = {"projects-" + project.id}
+                    >
+                        <p>{project.name}</p>
+                        <p>{project.timelabel}</p>
+                        <p>{project.aiuse}</p>
+                    </div>
+                ))
+            }
         </div>
     );
 }

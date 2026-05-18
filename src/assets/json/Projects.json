@@ -10,7 +10,8 @@
     },
     {
         "name": "Fake Project",
-        "timesort": 0,
-        "aiuse": 0
+        "timesort": 1,
+        "timelabel": "I dunno (1)",
+        "aiuse": 5
     }
 ]
