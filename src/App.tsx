@@ -16,9 +16,7 @@ export default function App() {
 				}
 			/>
 
-			<PropsProjects
-				id = "projects"
-			/>
+			<PropsProjects/>
 
 			<p>Hello, World!</p>
 		</>

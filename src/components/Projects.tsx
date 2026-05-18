@@ -3,6 +3,8 @@ import { useState, useMemo } from 'react';
 import Dropdown from './Dropdown.tsx';
 import data from './../assets/json/Projects.json';
 
+import '../css/Projects.css';
+
 const sortProjects = (
         array: any[],
         sortBy: 'name' | 'date' | 'ai' = 'name',
@@ -32,23 +34,9 @@ const sortProjects = (
         return sortedList;
     };
 
-// Top 3 Projects
-
-
-
-// The Rest
-
-
-
 // Actual Projects Element
 
-interface PropsProjects {
-    id: string;
-}
-
-export default function Projects(
-    { id }: PropsProjects
-) {
+export default function Projects() {
 
     const [sortBy, setSortBy] = useState<'name' | 'date' | 'ai'>("date");
     const [sortInversed, setSortInverted] = useState(false);
@@ -61,35 +49,38 @@ export default function Projects(
 
     return (
         <div
-            style={{ border: "1px solid red" }}
-            id={id}
+            id = "projects"
         >
-            Projects Section
+            <h2>Projects</h2>
+            <p>Some of the projects I made!</p>
 
-            {
-                sortProjects(structuredClone(data), 'date', false)
-                .slice(0, 3)
-                .map(project => (
-                    <div
-                        key = {"projects-" + project.id}
-                    >
-                        <p>{project.name}</p>
-                        <p>{project.timelabel}</p>
-                        <p>{project.aiuse}</p>
-                    </div>
-                ))
-            }
+            <div className = 'most-recent'>
+                {
+                    sortProjects(structuredClone(data), 'date', false)
+                    .slice(0, 3)
+                    .map(project => (
+                        <div
+                            key = {"projects-" + project.id}
+                        >
+                            <p>{project.name}</p>
+                            <p>{project.timelabel}</p>
+                            <p>{project.aiuse}</p>
+                        </div>
+                    ))
+                }
+            </div>
 
-            <button
-                onClick={() => {
-                    setSortInverted(!sortInversed);
-                    console.log("Is Inverted: " + sortInversed);
-                }}
-            >
-                Inverse List
-            </button>
 
             <div style = {{ display: showAll ? "block" : "none" }}>
+            
+                <button
+                    onClick={() => {
+                        setSortInverted(!sortInversed);
+                        console.log("Is Inverted: " + sortInversed);
+                    }}
+                >
+                    Inverse List
+                </button>
             
                 <Dropdown
                     dropdownLabel = 'Sort'
