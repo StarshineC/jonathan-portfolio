@@ -53,6 +53,8 @@ export default function Projects(
     const [sortBy, setSortBy] = useState<'name' | 'date' | 'ai'>("date");
     const [sortInversed, setSortInverted] = useState(false);
 
+    const [showAll, setShowAll] = useState(false);
+
     const sortedProjects = useMemo(() => {
         return sortProjects(structuredClone(data), sortBy, sortInversed);
     }, [sortBy, sortInversed]);
@@ -63,35 +65,11 @@ export default function Projects(
             id={id}
         >
             Projects Section
-            <button
-                onClick={() => {
-                    setSortInverted(!sortInversed);
-                    console.log("Is Inverted: " + sortInversed);
-                }}
-            >
-                Inverse List
-            </button>
-
-            <Dropdown
-                dropdownLabel = 'Sort'
-                name = 'dropdown-sort'
-                onSelect = {
-                    (value: string) => {
-                        console.log("Sorted by " + value);
-                        setSortBy(value as "name" | "date" | "ai");
-                    }
-                }
-                choices = {
-                    [
-                        { label: "Name" + (sortInversed ? " (Z-A)" : " (A-Z)"), value: "name" },
-                        { label: "Date" + (sortInversed ? " (Latest Last)" : " (Latest First)"), value: "date" },
-                        { label: "Generative AI" + (sortInversed ? " (Most Used Last)" : " (Most Used First)"), value: "ai" },
-                    ]
-                }
-            />
 
             {
-                sortedProjects.map(project => (
+                sortProjects(structuredClone(data), 'date', false)
+                .slice(0, 3)
+                .map(project => (
                     <div
                         key = {"projects-" + project.id}
                     >
@@ -101,6 +79,59 @@ export default function Projects(
                     </div>
                 ))
             }
+
+            <button
+                onClick={() => {
+                    setSortInverted(!sortInversed);
+                    console.log("Is Inverted: " + sortInversed);
+                }}
+            >
+                Inverse List
+            </button>
+
+            <div style = {{ display: showAll ? "block" : "none" }}>
+            
+                <Dropdown
+                    dropdownLabel = 'Sort'
+                    name = 'dropdown-sort'
+                    onSelect = {
+                        (value: string) => {
+                            console.log("Sorted by " + value);
+                            setSortBy(value as "name" | "date" | "ai");
+                        }
+                    }
+                    choices = {
+                        [
+                            { label: "Name" + (sortInversed ? " (Z-A)" : " (A-Z)"), value: "name" },
+                            { label: "Date" + (sortInversed ? " (Latest Last)" : " (Latest First)"), value: "date" },
+                            { label: "Generative AI" + (sortInversed ? " (Most Used Last)" : " (Most Used First)"), value: "ai" },
+                        ]
+                    }
+                />
+
+                {
+                    sortedProjects
+                    .map(project => (
+                        <div
+                            key = {"projects-" + project.id}
+                        >
+                            <p>{project.name}</p>
+                            <p>{project.timelabel}</p>
+                            <p>{project.aiuse}</p>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <button
+                onClick={() => {
+                    setShowAll(!showAll);
+                    console.log("Show All: " + showAll);
+                }}
+            >
+                {showAll ? "Show Less" : "Show All"}
+            </button>
+
         </div>
     );
 }
