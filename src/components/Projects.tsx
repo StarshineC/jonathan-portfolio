@@ -59,6 +59,7 @@ export default function Projects(
 
     return (
         <div
+            style={{ border: "1px solid red" }}
             id={id}
         >
             Projects Section
