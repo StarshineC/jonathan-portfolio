@@ -9,7 +9,8 @@ export default function App() {
 					[
 						{ id: "main", label: "Main" },
 						{ id: "skills", label: "Skills" },
-						{ id: "projects", label: "Projects" }
+						{ id: "projects", label: "Projects" },
+						{ id: "scraps", label: "Scraps" }
 					]
 				}
 			/>
