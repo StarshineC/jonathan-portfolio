@@ -1,5 +1,6 @@
 
 import NavigationBar from "./components/NavigationBar.tsx";
+import PropsProjects from "./components/Projects.tsx";
 
 export default function App() {
 	return (
@@ -14,6 +15,11 @@ export default function App() {
 					]
 				}
 			/>
+
+			<PropsProjects
+				id = "projects"
+			/>
+
 			<p>Hello, World!</p>
 		</>
 	);
