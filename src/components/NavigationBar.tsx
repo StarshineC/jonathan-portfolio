@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 interface PropsNavigationButton {
     children: string;
@@ -30,9 +30,19 @@ export default function NavigationBar(
     { links }: PropsNavigationBar
 ) {
 
+    const [visibility, setVisibility] = useState(false);
+
+
     return (
         <nav>
-            <button>X</button>
+            <button
+                onClick = { () => {
+                    setVisibility(!visibility);
+                    console.log(`Navbar: ${visibility}`);
+                } }
+            >
+                X
+            </button>
             <ul>
             {
                 links.map(
