@@ -2,6 +2,15 @@
     {
         "name": "Portfolio (2026): Now with React!",
         "id": "portfolio-2026",
+        "type": "web",
+        "timesort": 20260517,
+        "timelabel": "2026-05-17",
+        "aiuse": 2,
         "description": "I learned how to use React so I wouldn't have to do what I'm doing with Project \"World of Illusion.\" Unfortunately, I think it's only good for single page apps (and the weird systems that project uses). I made this portfolio website as a react project before moving on to learn other frameworks."
+    },
+    {
+        "name": "Fake Project",
+        "timesort": 0,
+        "aiuse": 0
     }
 ]
