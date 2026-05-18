@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Dropdown from './SortDropdown';
 import data from './../assets/json/Projects.json';
 
@@ -18,14 +18,14 @@ const sortProjects = (
                 break;
             case 'date':
                 sortedList.sort((a, b) => {
-                    if (reversed) return b.timesort - a.timesort;
-                    else return a.timesort - b.timesort;
+                    if (reversed) return a.timesort - b.timesort;
+                    else return b.timesort - a.timesort;
                 });
                 break;
             case 'ai':
                 sortedList.sort((a, b) => {
-                    if (reversed) return b.aiuse - a.aiuse;
-                    else return a.aiuse - b.aiuse;
+                    if (reversed) return a.aiuse - b.aiuse;
+                    else return b.aiuse - a.aiuse;
                 });
                 break;
         }
@@ -52,22 +52,10 @@ export default function Projects(
 
     const [sortBy, setSortBy] = useState<'name' | 'date' | 'ai'>("date");
     const [sortInversed, setSortInverted] = useState(false);
-    const [projectArray, setProjectArray] = useState(
-        sortProjects(
-            structuredClone(data),
-            sortBy,
-            sortInversed
-        )
-    );
 
-    const handleSort = () => {
-        const sortedList = sortProjects(
-            projectArray,
-            sortBy,
-            sortInversed
-        );
-        setProjectArray(sortedList);
-    }
+    const sortedProjects = useMemo(() => {
+        return sortProjects(structuredClone(data), sortBy, sortInversed);
+    }, [sortBy, sortInversed]);
 
     return (
         <div
@@ -77,8 +65,7 @@ export default function Projects(
             <button
                 onClick={() => {
                     setSortInverted(!sortInversed);
-                    handleSort();
-                    console.log(sortInversed);
+                    console.log("Is Inverted: " + sortInversed);
                 }}
             >
                 Inverse List
@@ -91,20 +78,19 @@ export default function Projects(
                     (value: string) => {
                         console.log("Sorted by " + value);
                         setSortBy(value as "name" | "date" | "ai");
-                        handleSort();
                     }
                 }
                 choices = {
                     [
-                        { label: "Name", value: "name" },
-                        { label: "Date", value: "date" },
-                        { label: "Usage of Generative AI", value: "ai" },
+                        { label: "Name" + (sortInversed ? " (Z-A)" : " (A-Z)"), value: "name" },
+                        { label: "Date" + (sortInversed ? " (Latest Last)" : " (Latest First)"), value: "date" },
+                        { label: "Generative AI" + (sortInversed ? " (Most Used Last)" : " (Most Used First)"), value: "ai" },
                     ]
                 }
             />
 
             {
-                projectArray.map(project => (
+                sortedProjects.map(project => (
                     <div
                         key = {"projects-" + project.id}
                     >
