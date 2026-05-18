@@ -1,6 +1,6 @@
 
 import { useState, useMemo } from 'react';
-import Dropdown from './SortDropdown';
+import Dropdown from './Dropdown.tsx';
 import data from './../assets/json/Projects.json';
 
 const sortProjects = (
@@ -24,8 +24,8 @@ const sortProjects = (
                 break;
             case 'ai':
                 sortedList.sort((a, b) => {
-                    if (reversed) return a.aiuse - b.aiuse;
-                    else return b.aiuse - a.aiuse;
+                    if (reversed) return b.aiuse - a.aiuse;
+                    else return a.aiuse - b.aiuse;
                 });
                 break;
         }
@@ -104,7 +104,7 @@ export default function Projects(
                         [
                             { label: "Name" + (sortInversed ? " (Z-A)" : " (A-Z)"), value: "name" },
                             { label: "Date" + (sortInversed ? " (Latest Last)" : " (Latest First)"), value: "date" },
-                            { label: "Generative AI" + (sortInversed ? " (Most Used Last)" : " (Most Used First)"), value: "ai" },
+                            { label: "Generative AI" + (sortInversed ? " (Most Used First)" : " (Most Used Last)"), value: "ai" },
                         ]
                     }
                 />

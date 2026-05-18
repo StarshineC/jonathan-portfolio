@@ -1,23 +1,4 @@
 
-import { useState } from 'react';
-
-
-interface PropsDropSelect {
-    value: string;
-    children: string;
-}
-export function DropSelect(
-    { value, children}: PropsDropSelect
-) {
-    return (
-        <option
-            value = {value}
-        >
-            {children}
-        </option>
-    )
-}
-
 interface PropsDropdown {
     dropdownLabel: string;
     name: string;
@@ -47,12 +28,12 @@ export default function Dropdown(
             {
                 choices.map(
                     ({value, label}) => (
-                        <DropSelect
+                        <option
                             value = {value}
                             key = {"dropselect-" + value}
                         >
                             {label}
-                        </DropSelect>
+                        </option>
                     )
                 )
             }
