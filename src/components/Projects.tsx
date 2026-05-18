@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import Dropdown from './SortDropdown';
 import data from './../assets/json/Projects.json';
 
 const sortProjects = (
@@ -82,6 +83,26 @@ export default function Projects(
             >
                 Inverse List
             </button>
+
+            <Dropdown
+                dropdownLabel = 'Sort'
+                name = 'dropdown-sort'
+                onSelect = {
+                    (value: string) => {
+                        console.log("Sorted by " + value);
+                        setSortBy(value as "name" | "date" | "ai");
+                        handleSort();
+                    }
+                }
+                choices = {
+                    [
+                        { label: "Name", value: "name" },
+                        { label: "Date", value: "date" },
+                        { label: "Usage of Generative AI", value: "ai" },
+                    ]
+                }
+            />
+
             {
                 projectArray.map(project => (
                     <div
