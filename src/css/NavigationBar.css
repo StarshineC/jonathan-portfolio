@@ -3,21 +3,44 @@ html {
     scroll-behavior: smooth;
 }
 
+.nav-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
 nav {
     display: block;
-    position: sticky;
+    position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
-    width: 100dvw;
-    height: 60px;
+    width: 90vw;
+    width: 90dvw;
+    height: 100vh;
+    height: 100dvh;
     background-color: #333;
     color: #fff;
+    transition: right 0.1s ease-in-out;
+    z-index: 1000;
+}
+
+nav.hidden {
+    right: -100vw;
+    right: -100dvw;
+}
+
+nav.visible {
+    right: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -27,4 +50,25 @@ nav ul li a {
     cursor: pointer;
     text-decoration: none;
     color: #fff;
+}
+
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    nav {
+        width: 100vw;
+        width: 100dvw;
+        height: 50px;
+        transition: none;
+    }
+
+    nav.hidden {
+        right: 0vw;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
 }

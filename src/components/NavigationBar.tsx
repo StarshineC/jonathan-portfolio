@@ -4,15 +4,19 @@ import './../css/NavigationBar.css';
 interface PropsNavigationButton {
     children: string;
     id: string;
+    onclick?: () => void;
 }
 
 function NavigationButton (
-    { children, id }: PropsNavigationButton
+    { children, id, onclick = () => {} }: PropsNavigationButton
 ) {
     
     return (
         <li>
-            <a href={"#" + id}>{children}</a>
+            <a 
+            href={"#" + id}
+            onClick={onclick}
+            >{children}</a>
         </li>
     );
     
@@ -35,30 +39,38 @@ export default function NavigationBar(
 
 
     return (
-        <nav>
+        <>
             <button
+            className = "nav-toggle"
                 onClick = { () => {
                     setVisibility(!visibility);
                     console.log(`Navbar: ${visibility}`);
                 } }
             >
-                X
+                {
+                    visibility ? "Close" : "Menu"
+                }
             </button>
-            <ul>
-            {
-                links.map(
-                    ({label, id}) => (
-                        <NavigationButton
-                            id = {id}
-                            key = { "navButton-" + id }
-                        >
-                            {label}
-                        </NavigationButton>
+            <nav
+                className = { visibility ? "visible" : "hidden" }
+            >
+                <ul>
+                {
+                    links.map(
+                        ({label, id}) => (
+                            <NavigationButton
+                                id = {id}
+                                key = { "navButton-" + id }
+                                onclick={ () => { setVisibility(false) } }
+                            >
+                                {label}
+                            </NavigationButton>
+                        )
                     )
-                )
-            }   
-            </ul>         
-        </nav>
+                }   
+                </ul>         
+            </nav>
+        </>
     );
 
 }
