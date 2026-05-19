@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './../css/BigProjectView.css';
 
 
 interface PropsBigProjectView {
@@ -18,7 +19,7 @@ export default function BigProjectView(
     const [detailsVisible, setDetailsVisible] = useState(true);
 
     return (
-        <div>
+        <div className = "big-project-view">
             <button onClick={ () => {
                 hideFunc();
                 setDetailsVisible(true);
