@@ -1,6 +1,7 @@
 
 import { useState, useMemo } from 'react';
 import Dropdown from './Dropdown.tsx';
+import BigProjectView from './BigProjectView.tsx';
 import data from './../assets/json/Projects.json';
 
 import '../css/Projects.css';
@@ -43,6 +44,16 @@ export default function Projects() {
 
     const [showAll, setShowAll] = useState(false);
 
+    const [bigProjectView, setBigProjectView] = useState({
+        isVisible: false,
+        title: "",  
+        timelabel: "",
+        description: "",
+        aiuse: 0,
+        aisummary: "",
+        id: ""
+    });
+
     const sortedProjects = useMemo(() => {
         return sortProjects(structuredClone(data), sortBy, sortInversed);
     }, [sortBy, sortInversed]);
@@ -59,13 +70,25 @@ export default function Projects() {
                     sortProjects(structuredClone(data), 'date', false)
                     .slice(0, 3)
                     .map(project => (
-                        <div
+                        <button
                             key = {"projects-" + project.id}
+                            onClick={ () => {
+                                console.log("Clicked " + project.name);
+                                setBigProjectView({
+                                    isVisible: true,
+                                    title: project.name,
+                                    timelabel: project.timelabel,
+                                    description: project.description,
+                                    aiuse: project.aiuse,
+                                    aisummary: project.aisummary,
+                                    id: project.id
+                                });
+                            }}
                         >
                             <p>{project.name}</p>
                             <p>{project.timelabel}</p>
                             <p>{project.aiuse}</p>
-                        </div>
+                        </button>
                     ))
                 }
             </div>
@@ -100,18 +123,34 @@ export default function Projects() {
                     }
                 />
 
-                {
-                    sortedProjects
-                    .map(project => (
-                        <div
+                <div>
+
+                    {
+                        sortedProjects
+                        .map(project => (
+                            <button
                             key = {"projects-" + project.id}
-                        >
-                            <p>{project.name}</p>
-                            <p>{project.timelabel}</p>
-                            <p>{project.aiuse}</p>
-                        </div>
-                    ))
-                }
+                                onClick = { () => {
+                                    console.log("Clicked " + project.name);
+                                    setBigProjectView({
+                                        isVisible: true,
+                                        title: project.name,
+                                        timelabel: project.timelabel,
+                                        description: project.description,
+                                        aiuse: project.aiuse,
+                                        aisummary: project.aisummary,
+                                        id: project.id
+                                    });
+                                } }
+                            >
+                                <p>{project.name}</p>
+                                <p>{project.timelabel}</p>
+                                <p>{project.aiuse}</p>
+                            </button>
+                        ))
+                    }
+                </div>
+                
             </div>
 
             <button
@@ -122,6 +161,19 @@ export default function Projects() {
             >
                 {showAll ? "Show Less" : "Show All"}
             </button>
+
+            {   
+                bigProjectView.isVisible &&
+                <BigProjectView
+                    hideFunc={() => setBigProjectView({ ...bigProjectView, isVisible: false })}
+                    title={bigProjectView.title}
+                    timelabel={bigProjectView.timelabel}
+                    description={bigProjectView.description}
+                    aiuse={bigProjectView.aiuse}
+                    aisummary={bigProjectView.aisummary}
+                    id={bigProjectView.id}
+                />
+            }
 
         </div>
     );
