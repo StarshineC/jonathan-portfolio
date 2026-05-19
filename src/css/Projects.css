@@ -1,0 +1,25 @@
+#projects {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#projects .most-recent {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.closed {
+    height: 0;
+}
+
+
+.all-projects {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

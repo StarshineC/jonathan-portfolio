@@ -123,7 +123,7 @@ export default function Projects() {
                     }
                 />
 
-                <div>
+                <div className = { 'all-projects' }>
 
                     {
                         sortedProjects
