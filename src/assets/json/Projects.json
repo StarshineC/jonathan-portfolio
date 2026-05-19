@@ -3,14 +3,48 @@
         "name": "Portfolio (2026): Now with React!",
         "id": "portfolio-2026",
         "timesort": 20260517,
-        "timelabel": "2026-05-17",
+        "timelabel": "May 17, 2026",
         "aiuse": 2,
         "description": "I learned how to use React so I wouldn't have to do what I'm doing with Project \"World of Illusion.\" Unfortunately, I think it's only good for single page apps (and the weird systems that project uses). I made this portfolio website as a react project before moving on to learn other frameworks."
     },
     {
-        "name": "Fake Project",
-        "timesort": 1,
-        "timelabel": "I dunno (1)",
-        "aiuse": 5
+        "name": "UMass Boston I Student Photo Project",
+        "id": "umb-it-photo2026",
+        "timesort": 20260513,
+        "timelabel": "May 13, 2026",
+        "aiuse": 0,
+        "description": "I took a photograph for the project that ended up getting selected for display in this historical exhibit."
+    },
+    {
+        "name": "Welkin Wonders Website",
+        "id": "welkin-wonders-2025",
+        "timesort": 20251213,
+        "timelabel": "November-December 2025",
+        "aiuse": 1,
+        "description": "This is a school project where we made a functioning storefront for a \"client\" under the scrum framework. I was the primary front-end designer for the various shop pages, and communicated with other members on how what content is needed to work with the backend. I've also communicated with the client to discuss needed features."
+    },
+    {
+        "name": "New Friend: A Short Film",
+        "id": "film-new-friend-2021",
+        "timesort": 20230517,
+        "timelabel": "May 2023",
+        "aiuse": 0,
+        "description": "Animated and composed for the film \"New Friend.\" This was done via animation software \"Clip Studio Paint\", music editor \"Bandlab\", as well as video editing software \"Adobe Premier\". The short film made it to the finals for the \"Animated Film\" category, but did not win."
+    },
+    {
+        "name": "Villain in a Flower Shop: A Short Film",
+        "id": "film-juju-2021",
+        "timesort": 20230517,
+        "timelabel": "May 2023",
+        "aiuse": 0,
+        "description": "Composed the soundtrack used for the animated short film \"Villain in a Flower Shop,\" animated by Juju Rosario. The track was composed on music editor \"Bandlab.\" The short film made it to the finals for the \"Animated Film\" category, and ended up winning."
+    },
+    {
+        "name": "Hope: A Short Film",
+        "id": "film-hope-2021",
+        "timesort": 20230517,
+        "timelabel": "May 2022",
+        "aiuse": 0,
+        "description": "Animated and composed for the film \"Hope.\" This was done via animation software \"Flipnote Studio 3D\" for Nintendo 3DS, music editor \"Garage Band\" for Mac, as well as video editing software \"Adobe Premier\". The short film made it to the finals for the \"Animated Film\" category, but did not win."
     }
 ]
