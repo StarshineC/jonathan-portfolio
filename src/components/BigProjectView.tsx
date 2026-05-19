@@ -17,12 +17,16 @@ export default function BigProjectView(
 ) {
 
     const [detailsVisible, setDetailsVisible] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [loadingError, setLoadingError] = useState(false);
 
     return (
         <div className = "big-project-view">
             <button onClick={ () => {
                 hideFunc();
                 setDetailsVisible(true);
+                setIsLoading(true);
+                setLoadingError(false);
                 console.log(`Details Visible: ${detailsVisible}`);
             }}
             >
@@ -45,6 +49,29 @@ export default function BigProjectView(
             >
                 Image: {id}
             </p>
+            {
+                isLoading &&
+                <p>Image Loading...</p>
+            }
+            {
+                loadingError &&
+                <p>Error loading image.</p>
+            }
+            {
+                !loadingError &&
+                <img
+                    src = {
+                        "/assets/img-projects/full-" + id + ".webp"
+                    }
+                    alt = {title}
+                    onLoad={() => setIsLoading(false)}
+                    onError={() => {
+                        setIsLoading(false);
+                        setLoadingError(true);
+                        console.log("Error loading image for project " + id);
+                    }}
+                />
+            }
         </div>
     );
 }
