@@ -1,12 +1,14 @@
 
 import data from './../assets/json/AboutMe.json';
 
+import "../css/AboutMe.css";
+
 export default function AboutMe() {
     return (
         <div id = "about">
             <h2>About Me</h2>
             <p style={{ whiteSpace: "pre-line" }}>{data.description}</p>
-            <div>
+            <div className='list-cards'>
                 <ListCard
                     title = "Skills"
                     content={data.skills}
@@ -27,7 +29,7 @@ interface PropsListCard {
 
 function ListCard({ title, content }: PropsListCard) {
     return (
-        <div className="list-card">
+        <div>
             <h3>{title}</h3>
             <ul>
                 {content.map((item, index) => (

@@ -22,10 +22,6 @@ export default function App() {
 
 			<AboutMe/>
 
-			<p>
-				Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>
-			</p>
-
 			<PropsProjects/>
 
 			<p>
