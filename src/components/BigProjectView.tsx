@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "./Image.tsx";
 import './../css/BigProjectView.css';
 
 
@@ -17,14 +18,10 @@ export default function BigProjectView(
 ) {
 
     const [detailsVisible, setDetailsVisible] = useState(true);
-    const [isLoading, setIsLoading] = useState(true);
-    const [loadingError, setLoadingError] = useState(false);
 
     const onClose = () => {
         hideFunc();
         setDetailsVisible(true);
-        setIsLoading(true);
-        setLoadingError(false);
         console.log(`Details Visible: ${detailsVisible}`);
     };
 
@@ -45,37 +42,12 @@ export default function BigProjectView(
                         <p>{aisummary}</p>
                     </>
                 }
-                <p
-                    onClick={ () => {
-                        setDetailsVisible(!detailsVisible);
-                    }}
-                    >
-                    Image: {id}
-                </p>
-                {
-                    isLoading &&
-                    <p>Image Loading...</p>
-                }
-                {
-                    loadingError &&
-                    <p>Error loading image.</p>
-                }
-                {
-                    !loadingError &&
-                    <img
-                        src = {
-                            "/assets/img-projects/full-" + id + ".webp"
-                        }
-                        alt = {title}
-                        onLoad={() => setIsLoading(false)}
-                        onError={() => {
-                            setIsLoading(false);
-                            setLoadingError(true);
-                            console.log("Error loading image for project " + id);
-                        }}
-                        onClick={ () => {setDetailsVisible(!detailsVisible)} }
-                    />
-                }
+                <Image
+                    src={"/assets/img-projects/full-" + id + ".webp"}
+                    alt={title}
+                    style="big-project-image"
+                    onClick={() => setDetailsVisible(!detailsVisible)}
+                />
             </div>
         </>
     );
