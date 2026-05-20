@@ -3,13 +3,21 @@
     "skills": [
         "HTML",
         "CSS",
-        "Javascript"
+        "Javascript",
+        "React",
+        "Python",
+        "Java",
+        "Git",
+        "Github"
     ],
     "interests": [
         "Web Design",
         "Illustration",
         "Fictional Storytelling",
         "3D Modelling",
-        "Video Games/Interactive Design"
+        "Animation",
+        "Music",
+        "Interactive Design",
+        "Video Games"
     ]
 }
