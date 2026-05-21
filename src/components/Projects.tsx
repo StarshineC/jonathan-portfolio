@@ -121,6 +121,7 @@ export default function Projects() {
                             { label: "Generative AI" + (sortInversed ? " (Most Used First)" : " (Most Used Last)"), value: "ai" },
                         ]
                     }
+                    defaultValue = {sortBy}
                 />
 
                 <div className = { 'all-projects' }>

@@ -3,13 +3,14 @@ interface PropsDropdown {
     dropdownLabel: string;
     name: string;
     onSelect: (value: string) => void;
+    defaultValue?: string;
     choices: {
         value: string;
         label: string;
     }[];
 }
 export default function Dropdown(
-    { dropdownLabel, name, onSelect, choices }: PropsDropdown
+    { dropdownLabel, name, onSelect, defaultValue, choices }: PropsDropdown
 ) {
 
     return (
@@ -24,6 +25,7 @@ export default function Dropdown(
                 onChange = { (event) => {
                     onSelect(event.target.value);
                 } }
+                defaultValue={defaultValue}
             >
             {
                 choices.map(
