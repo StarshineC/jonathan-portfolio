@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "./Image.tsx";
+import fixQuotes from "../utility/fixQuotes.ts";
 import './../css/BigProjectView.css';
 
 
@@ -48,16 +49,16 @@ export default function BigProjectView(
                 {
                     detailsVisible &&
                     <>
-                        <h2>{title}</h2>
-                        <p>{timelabel}</p>
-                        <p>{description}</p>
+                        <h2>{fixQuotes(title)}</h2>
+                        <p>{fixQuotes(timelabel)}</p>
+                        <p>{fixQuotes(description)}</p>
                         <p>AI Use: {aiuse}</p>
-                        <p>{aisummary}</p>
+                        <p>{fixQuotes(aisummary)}</p>
                     </>
                 }
                 <Image
                     src={"/assets/img-projects/full-" + id + ".webp"}
-                    alt={title}
+                    alt={fixQuotes(title)}
                     style="big-project-image"
                     onClick={() => setDetailsVisible(!detailsVisible)}
                 />

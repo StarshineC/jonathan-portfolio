@@ -1,0 +1,18 @@
+[
+    {
+        "company": "Kumon Math and Reading Center",
+        "location": "Framingham, MA",
+        "role": "Tutor/Grader",
+        "time": "2020 - Summer 2023",
+        "description": "I've graded homework and classwork packets for children who go to Kumon, leading to their better understanding of the concepts given to them.",
+        "references": [
+            {
+                "name": "Latha Narayanan",
+                "role": "Center Director for Kumon of Framingham",
+                "contact": [
+                    { "method": "email", "info": "framingham_franklin@ikumon.com" }
+                ]
+            }
+        ]
+    }
+]

@@ -1,10 +1,17 @@
 
 import { useState, useMemo } from 'react';
+
 import Dropdown from './Dropdown.tsx';
 import BigProjectView from './BigProjectView.tsx';
+
 import data from './../assets/json/Projects.json';
 
+import fixQuotes from './../utility/fixQuotes.ts';
+
 import '../css/Projects.css';
+
+
+
 
 const sortProjects = (
         array: any[],
@@ -85,7 +92,7 @@ export default function Projects() {
                                 });
                             }}
                         >
-                            <p>{project.name}</p>
+                            <p>{fixQuotes(project.name)}</p>
                             <p>{project.timelabel}</p>
                             <p>{project.aiuse}</p>
                         </button>
@@ -144,8 +151,8 @@ export default function Projects() {
                                     });
                                 } }
                             >
-                                <p>{project.name}</p>
-                                <p>{project.timelabel}</p>
+                                <p>{fixQuotes(project.name)}</p>
+                                <p>{fixQuotes(project.timelabel)}</p>
                                 <p>{project.aiuse}</p>
                             </button>
                         ))
