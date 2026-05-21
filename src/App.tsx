@@ -9,10 +9,9 @@ export default function App() {
 			<NavigationBar
 				links = {
 					[
-						{ id: "main", label: "Main" },
+						{ id: "main", label: "Top" },
 						{ id: "about", label: "About" },
 						{ id: "projects", label: "Projects" },
-						{ id: "scraps", label: "Scraps" },
 						{ id: "contact", label: "Contact" }
 					]
 				}

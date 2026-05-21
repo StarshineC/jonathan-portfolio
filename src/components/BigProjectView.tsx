@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "./Image.tsx";
 import './../css/BigProjectView.css';
 
@@ -24,6 +24,19 @@ export default function BigProjectView(
         setDetailsVisible(true);
         console.log(`Details Visible: ${detailsVisible}`);
     };
+
+    useEffect(() => {
+        const handleEscape = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                onClose();
+            }
+        };
+
+        document.addEventListener("keydown", handleEscape);
+        return () => {
+            document.removeEventListener("keydown", handleEscape);
+        };
+    }, [detailsVisible]);
 
     return (
         <>

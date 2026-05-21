@@ -7,11 +7,12 @@ interface PropsImage {
     src: string;
     alt: string;
     style?: string;
+    isFill?: boolean;
     onClick?: () => void;
 }
 
 export default function Image(
-    { src, alt, style, onClick }: PropsImage
+    { src, alt, style, isFill = false, onClick }: PropsImage
 ) {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +31,7 @@ export default function Image(
             {
                 !loadingError &&
                 <img
-                    className="inner-image"
+                    className={isFill ? "inner-image inner-image-fill" : "inner-image"}
                     src={src}
                     alt={alt}
                     onClick={onClick}
