@@ -33,7 +33,7 @@ export default function Image(
                 <img
                     className={isFill ? "inner-image inner-image-fill" : "inner-image"}
                     src={src}
-                    alt={alt}
+                    alt={isLoading ? "" : alt}
                     onClick={onClick}
                     onLoad={() => {
                         setIsLoading(false);
