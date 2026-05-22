@@ -7,20 +7,18 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 20px;
-}
 
-/* List Card */
-.list-cards div {
-    border: solid 1px maroon;
-    padding: 10px;
-    flex: 1;
-}
+    div {
+        border: solid 1px maroon;
+        padding: 10px;
+        flex: 1;
 
-.list-cards div h3,
-.list-cards div ul {
-    text-align: center;
-}
+        h3, ul {
+            text-align: center;
+        }
 
-.list-cards div ul li {
-    list-style-type: none;
+        ul li {
+            list-style-type: none;
+        }
+    }
 }

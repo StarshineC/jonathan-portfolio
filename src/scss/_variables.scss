@@ -1,1 +1,7 @@
 $width-tablet: 768px;
+
+@mixin hover-pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}

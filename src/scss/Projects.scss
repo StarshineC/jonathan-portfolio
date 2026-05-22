@@ -3,42 +3,36 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-}
 
-#projects .most-recent {
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    .most-recent {
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .closed {
     height: 0;
 }
 
-
 .all-projects {
     border: 1px solid green;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.all-projects button {
-    position: relative;
-    aspect-ratio: 16 / 9;
-}
-
-@media screen and (min-width: $width-tablet) {
-    .all-projects {
-
+    @media screen and (min-width: $width-tablet) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
 
-    .all-projects button {
-        aspect-ratio: 1 / 1;
+    button {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        @media screen and (min-width: $width-tablet) {
+            aspect-ratio: 1 / 1;
+        }
     }
 }
 

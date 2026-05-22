@@ -12,10 +12,6 @@
     object-fit: cover;
 }
 
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
 .loading-spinner{
     position: absolute;
     width: 25%;
@@ -23,4 +19,8 @@
     top: 50%;
     left: 50%;
     animation: spin 2s linear infinite;
+    @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
 }
