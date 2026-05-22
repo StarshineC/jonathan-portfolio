@@ -3,6 +3,7 @@ import { useState, useMemo } from 'react';
 
 import Dropdown from './Dropdown.tsx';
 import BigProjectView from './BigProjectView.tsx';
+import Image from './Image.tsx';
 
 import data from './../assets/json/Projects.json';
 
@@ -154,6 +155,12 @@ export default function Projects() {
                                 <p>{fixQuotes(project.name)}</p>
                                 <p>{fixQuotes(project.timelabel)}</p>
                                 <p>{project.aiuse}</p>
+                                <Image
+                                    src={"/assets/img-projects/thumb-" + project.id + ".webp"}
+                                    alt={project.name}
+                                    style="project-image"
+                                    isFill={true}
+                                />
                             </button>
                         ))
                     }
