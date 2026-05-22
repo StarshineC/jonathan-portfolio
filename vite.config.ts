@@ -8,4 +8,11 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "/src/scss/_variables.scss" as *;`,
+      }
+    }
+  },
 })

@@ -1,7 +1,7 @@
 
 import data from './../assets/json/AboutMe.json';
 
-import "../css/AboutMe.css";
+import "../scss/AboutMe.scss";
 
 export default function AboutMe() {
     return (

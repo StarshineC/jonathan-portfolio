@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './../css/NavigationBar.css';
+import './../scss/NavigationBar.scss';
 
 interface PropsNavigationButton {
     children: string;

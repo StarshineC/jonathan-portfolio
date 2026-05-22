@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ImageLoading from "./../assets/img/loading.svg";
 
-import './../css/Image.css';
+import './../scss/Image.scss';
 
 interface PropsImage {
     src: string;
