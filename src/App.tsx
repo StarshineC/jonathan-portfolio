@@ -1,5 +1,6 @@
 
 import AboutMe from "./components/AboutMe.tsx";
+import Contact from "./components/Contact.tsx";
 import Experience from "./components/Experience.tsx";
 import NavigationBar from "./components/NavigationBar.tsx";
 import Projects from "./components/Projects.tsx";
@@ -27,11 +28,7 @@ export default function App() {
 
 			<Projects/>
 
-			<p>
-				Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>
-			</p>
-
-			<p id="contact">Hello, World!</p>
+			<Contact/>
 		</>
 	);
 };
