@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "./Image.tsx";
-import fixQuotes from "../utility/fixQuotes.ts";
+import { fixQuotes } from "../utility/stringEditor.ts";
 import './../css/BigProjectView.css';
 
 

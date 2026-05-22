@@ -6,7 +6,7 @@ import BigProjectView from './BigProjectView.tsx';
 
 import data from './../assets/json/Projects.json';
 
-import fixQuotes from './../utility/fixQuotes.ts';
+import { fixQuotes } from './../utility/stringEditor.ts';
 
 import '../css/Projects.css';
 
