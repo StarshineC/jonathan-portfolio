@@ -4,7 +4,7 @@ import { removeLinkPrefix } from '../utility/stringEditor.ts';
 
 export default function Experience() {
   return (
-    <section className="experience">
+    <section id="experience">
         <h2>Experience</h2>
         {
             data.map( (entry) => (
