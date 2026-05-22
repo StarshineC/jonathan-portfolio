@@ -1,7 +1,8 @@
 
 import AboutMe from "./components/AboutMe.tsx";
+import Experience from "./components/Experience.tsx";
 import NavigationBar from "./components/NavigationBar.tsx";
-import PropsProjects from "./components/Projects.tsx";
+import Projects from "./components/Projects.tsx";
 
 export default function App() {
 	return (
@@ -21,7 +22,9 @@ export default function App() {
 
 			<AboutMe/>
 
-			<PropsProjects/>
+			<Experience/>
+
+			<Projects/>
 
 			<p>
 				Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>Words<br/>
