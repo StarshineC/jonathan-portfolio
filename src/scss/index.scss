@@ -6,3 +6,19 @@
 .content-strip {
     @include content-strip;
 }
+
+#main {
+    background-color: $color-background-1;
+}
+#about {
+    background-color: $color-background-2;
+}
+#experience {
+    background-color: $color-background-3;
+}
+#projects {
+    background-color: $color-background-4;
+}
+#contact {
+    background-color: $color-background-5;
+}
