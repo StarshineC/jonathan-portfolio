@@ -16,6 +16,16 @@
     height: 0;
 }
 
+.sort-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    button {
+        color: limegreen;
+    }
+}
+
 .all-projects {
     border: 1px solid green;
     display: flex;

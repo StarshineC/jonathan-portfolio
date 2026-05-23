@@ -1,7 +1,18 @@
 $width-tablet: 768px;
+$width-desktop: 1024px;
 
+
+
+// Hover? Cursor now points.
 @mixin hover-pointer {
     &:hover {
         cursor: pointer;
     }
+}
+
+// If you've seen my previous scraps and how I set up all my previous static sites, you'll recognize this.
+@mixin content-strip {
+    width: min(90vw, $width-desktop);
+    width: min(90dvw, $width-desktop);
+    margin-inline: auto;
 }

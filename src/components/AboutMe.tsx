@@ -6,17 +6,19 @@ import "../scss/AboutMe.scss";
 export default function AboutMe() {
     return (
         <div id = "about">
-            <h2>About Me</h2>
-            <p style={{ whiteSpace: "pre-line" }}>{data.description}</p>
-            <div className='list-cards'>
-                <ListCard
-                    title = "Skills"
-                    content={data.skills}
-                />
-                <ListCard
-                    title = "Interests"
-                    content={data.interests}
-                />
+            <div className='content-strip'>
+                <h2>About Me</h2>
+                <p style={{ whiteSpace: "pre-line" }}>{data.description}</p>
+                <div className='list-cards'>
+                    <ListCard
+                        title = "Skills"
+                        content={data.skills}
+                        />
+                    <ListCard
+                        title = "Interests"
+                        content={data.interests}
+                        />
+                </div>
             </div>
         </div>
     );

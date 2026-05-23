@@ -67,79 +67,20 @@ export default function Projects() {
     }, [sortBy, sortInversed]);
 
     return (
-        <div
-            id = "projects"
-        >
-            <h2>Projects</h2>
-            <p>Some of the projects I made!</p>
+        <section id = "projects">
+            <div className = "content-strip">
 
-            <div className = 'most-recent'>
-                {
-                    sortProjects(structuredClone(data), 'date', false)
-                    .slice(0, 3)
-                    .map(project => (
-                        <button
-                            key = {"projects-" + project.id}
-                            onClick={ () => {
-                                console.log("Clicked " + project.name);
-                                setBigProjectView({
-                                    isVisible: true,
-                                    title: project.name,
-                                    timelabel: project.timelabel,
-                                    description: project.description,
-                                    aiuse: project.aiuse,
-                                    aisummary: project.aisummary,
-                                    id: project.id
-                                });
-                            }}
-                        >
-                            <p>{fixQuotes(project.name)}</p>
-                            <p>{project.timelabel}</p>
-                            <p>{project.aiuse}</p>
-                        </button>
-                    ))
-                }
-            </div>
+                <h2>Projects</h2>
+                <p>Some of the projects I made!</p>
 
-
-            <div style = {{ display: showAll ? "block" : "none" }}>
-            
-                <button
-                    onClick={() => {
-                        setSortInverted(!sortInversed);
-                        console.log("Is Inverted: " + sortInversed);
-                    }}
-                >
-                    Inverse List
-                </button>
-            
-                <Dropdown
-                    dropdownLabel = 'Sort'
-                    name = 'dropdown-sort'
-                    onSelect = {
-                        (value: string) => {
-                            console.log("Sorted by " + value);
-                            setSortBy(value as "name" | "date" | "ai");
-                        }
-                    }
-                    choices = {
-                        [
-                            { label: "Name" + (sortInversed ? " (Z-A)" : " (A-Z)"), value: "name" },
-                            { label: "Date" + (sortInversed ? " (Latest Last)" : " (Latest First)"), value: "date" },
-                            { label: "Generative AI" + (sortInversed ? " (Most Used First)" : " (Most Used Last)"), value: "ai" },
-                        ]
-                    }
-                    defaultValue = {sortBy}
-                />
-
-                <div className = { 'all-projects' }>
-
+                <div className = 'most-recent'>
                     {
-                        sortedProjects
+                        sortProjects(structuredClone(data), 'date', false)
+                        .slice(0, 3)
                         .map(project => (
                             <button
-                            key = {"projects-" + project.id}
-                                onClick = { () => {
+                                key = {"projects-" + project.id}
+                                onClick={ () => {
                                     console.log("Clicked " + project.name);
                                     setBigProjectView({
                                         isVisible: true,
@@ -150,46 +91,109 @@ export default function Projects() {
                                         aisummary: project.aisummary,
                                         id: project.id
                                     });
-                                } }
+                                }}
                             >
                                 <p>{fixQuotes(project.name)}</p>
-                                <p>{fixQuotes(project.timelabel)}</p>
+                                <p>{project.timelabel}</p>
                                 <p>{project.aiuse}</p>
-                                <Image
-                                    src={"/assets/img-projects/thumb-" + project.id + ".webp"}
-                                    alt={project.name}
-                                    style="project-image"
-                                    isFill={true}
-                                />
                             </button>
                         ))
                     }
                 </div>
+
+
+                <div style = {{ display: showAll ? "block" : "none" }}>
+                    
+                    <div className = 'sort-controls'>            
+                        <Dropdown
+                            dropdownLabel = 'Sort'
+                            name = 'dropdown-sort'
+                            onSelect = {
+                                (value: string) => {
+                                    console.log("Sorted by " + value);
+                                    setSortBy(value as "name" | "date" | "ai");
+                                }
+                            }
+                            choices = {
+                                [
+                                    { label: "Name" + (sortInversed ? " (Z-A)" : " (A-Z)"), value: "name" },
+                                    { label: "Date" + (sortInversed ? " (Latest Last)" : " (Latest First)"), value: "date" },
+                                    { label: "Generative AI" + (sortInversed ? " (Most Used First)" : " (Most Used Last)"), value: "ai" },
+                                ]
+                            }
+                            defaultValue = {sortBy}
+                        />
+                        <button
+                            onClick={() => {
+                                setSortInverted(!sortInversed);
+                                console.log("Is Inverted: " + sortInversed);
+                            }}
+                        >
+                            {
+                                sortInversed ? "[v]" : "[^]"
+                            }
+                        </button>
+                    </div>
+
+                    <div className = { 'all-projects' }>
+
+                        {
+                            sortedProjects
+                            .map(project => (
+                                <button
+                                key = {"projects-" + project.id}
+                                    onClick = { () => {
+                                        console.log("Clicked " + project.name);
+                                        setBigProjectView({
+                                            isVisible: true,
+                                            title: project.name,
+                                            timelabel: project.timelabel,
+                                            description: project.description,
+                                            aiuse: project.aiuse,
+                                            aisummary: project.aisummary,
+                                            id: project.id
+                                        });
+                                    } }
+                                >
+                                    <p>{fixQuotes(project.name)}</p>
+                                    <p>{fixQuotes(project.timelabel)}</p>
+                                    <p>{project.aiuse}</p>
+                                    <Image
+                                        src={"/assets/img-projects/thumb-" + project.id + ".webp"}
+                                        alt={project.name}
+                                        style="project-image"
+                                        isFill={true}
+                                    />
+                                </button>
+                            ))
+                        }
+                    </div>
+                    
+                </div>
+
+                <button
+                    onClick={() => {
+                        setShowAll(!showAll);
+                        console.log("Show All: " + showAll);
+                    }}
+                >
+                    {showAll ? "Show Less" : "Show All"}
+                </button>
+
+                {   
+                    bigProjectView.isVisible &&
+                    <BigProjectView
+                        hideFunc={() => setBigProjectView({ ...bigProjectView, isVisible: false })}
+                        title={bigProjectView.title}
+                        timelabel={bigProjectView.timelabel}
+                        description={bigProjectView.description}
+                        aiuse={bigProjectView.aiuse}
+                        aisummary={bigProjectView.aisummary}
+                        id={bigProjectView.id}
+                    />
+                }
                 
             </div>
-
-            <button
-                onClick={() => {
-                    setShowAll(!showAll);
-                    console.log("Show All: " + showAll);
-                }}
-            >
-                {showAll ? "Show Less" : "Show All"}
-            </button>
-
-            {   
-                bigProjectView.isVisible &&
-                <BigProjectView
-                    hideFunc={() => setBigProjectView({ ...bigProjectView, isVisible: false })}
-                    title={bigProjectView.title}
-                    timelabel={bigProjectView.timelabel}
-                    description={bigProjectView.description}
-                    aiuse={bigProjectView.aiuse}
-                    aisummary={bigProjectView.aisummary}
-                    id={bigProjectView.id}
-                />
-            }
-
-        </div>
+        </section>
     );
 }
