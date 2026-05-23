@@ -25,14 +25,14 @@ nav {
     width: 90dvw;
     height: 100vh;
     height: 100dvh;
-    background-color: #333;
+    background-color: $color-background-nav;
     color: #fff;
     transition: right 0.1s ease-in-out;
     z-index: 500;
     @media screen and (min-width: $width-tablet) {
         width: 100vw;
         width: 100dvw;
-        height: 50px;
+        height: $nav-height;
         transition: none;
     }
 
