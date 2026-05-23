@@ -4,6 +4,10 @@
     flex-direction: column;
     gap: 40px;
 
+    h2 {
+        @include font-header;
+    }
+
     .most-recent {
         border: 1px solid red;
         display: flex;
