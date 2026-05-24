@@ -43,11 +43,22 @@ $nav-height: 60px;
 }
 
 // Super Cool Ticket Shape
-@mixin ticket-shape($corner-radius: 25px) {
+@mixin ticket-shape(
+    $corner-radius: 25px,
+    $corner-radius-mobile: calc($corner-radius / 2)
+    ) {
     mask-image: 
-        radial-gradient(circle at 0 0, transparent $corner-radius, black $corner-radius),
-        radial-gradient(circle at 100% 0, transparent $corner-radius, black $corner-radius),
-        radial-gradient(circle at 100% 100%, transparent $corner-radius, black $corner-radius),
-        radial-gradient(circle at 0 100%, transparent $corner-radius, black $corner-radius);
+        radial-gradient(circle at 0 0, transparent $corner-radius-mobile, black $corner-radius-mobile),
+        radial-gradient(circle at 100% 0, transparent $corner-radius-mobile, black $corner-radius-mobile),
+        radial-gradient(circle at 100% 100%, transparent $corner-radius-mobile, black $corner-radius-mobile),
+        radial-gradient(circle at 0 100%, transparent $corner-radius-mobile, black $corner-radius-mobile);
+    @media screen and (min-width: $width-tablet) {
+        mask-image: 
+            radial-gradient(circle at 0 0, transparent $corner-radius, black $corner-radius),
+            radial-gradient(circle at 100% 0, transparent $corner-radius, black $corner-radius),
+            radial-gradient(circle at 100% 100%, transparent $corner-radius, black $corner-radius),
+            radial-gradient(circle at 0 100%, transparent $corner-radius, black $corner-radius);
+    }
     mask-composite: intersect;
+    -webkit-mask-composite: destination-in; // I don't have an Apple modern enough to test this lol.
 }
