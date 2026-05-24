@@ -89,7 +89,6 @@
             }
             @include ticket-shape(12.25px, 12.25px);
             background-color: $color-background-4;
-            @include hover-pointer;
         }
     }
     
