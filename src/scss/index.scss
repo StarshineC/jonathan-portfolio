@@ -29,3 +29,17 @@ html {
 #contact {
     background-color: $color-background-5;
 }
+
+
+.visible-desktop {
+    display: block;
+    @media screen and (max-width: $width-tablet) {
+        display: none;
+    }
+}
+.visible-mobile {
+    display: none;
+    @media screen and (max-width: $width-tablet) {
+        display: block;
+    }
+}

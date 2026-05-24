@@ -2,6 +2,8 @@
 import data from './../assets/json/Experience.json';
 import { removeLinkPrefix } from '../utility/stringEditor.ts';
 
+import './../scss/Experience.scss';
+
 export default function Experience() {
 
     return (
@@ -51,11 +53,9 @@ function ExperienceEntry({ entry }: PropsExperienceEntry) {
             className="experience-entry"
         >
             <h3>{entry.company}</h3>
-            <p>{entry.location}</p>
-            <p>{entry.role}</p>
-            <p>{entry.time}</p>
+            <p>{entry.location} | {entry.role} | {entry.time}</p>
             <p>{entry.description}</p>
-            <div>
+            <div className="references">
                 {
                     entry.references.map( (ref) => (
                         <Reference
@@ -87,8 +87,8 @@ interface PropsReference {
 function Reference({ name, role, contacts }: PropsReference) {
     return (
         <div>
-            <p>{name}</p>
-            <p>{role}</p>
+            <p className = "visible-desktop">{name} | {role}</p>
+            <p className = "visible-mobile">{name}<br/>{role}</p>
             {
                 contacts.map( (contact) => (
                     <p
