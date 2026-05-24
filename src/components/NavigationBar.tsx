@@ -51,9 +51,7 @@ export default function NavigationBar(
                     visibility ? "Close" : "Menu"
                 }
             </button>
-            <nav
-                className = { visibility ? "visible" : "hidden" }
-            >
+            <nav className = { visibility ? "visible" : "hidden" }>
                 <ul>
                 {
                     links.map(

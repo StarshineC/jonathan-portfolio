@@ -18,7 +18,7 @@ html {
 }
 
 nav {
-    display: block;
+    display: flex;
     position: fixed;
     top: 0;
     width: 90vw;
@@ -57,11 +57,22 @@ nav {
         @media screen and (min-width: $width-tablet) {
             flex-direction: row;
         }
+        width: 80%;
+        margin: auto;
+        background-color: white;
+        @include ticket-shape();
+        @media screen and (min-width: $width-tablet) {
+            background-color: transparent;
+            @include ticket-shape(0px, 0px);
+        }
         
         li a {
             cursor: pointer;
             text-decoration: none;
-            color: #fff;
+            color: #000000;
+            @media screen and (min-width: $width-tablet) {
+                color: #ffffff;
+            }
         }
     }
     
