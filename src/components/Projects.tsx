@@ -112,7 +112,7 @@ export default function Projects() {
                         
                         <div className = 'sort-controls'>            
                             <Dropdown
-                                dropdownLabel = 'Sort'
+                                dropdownLabel = 'Sort by:'
                                 name = 'dropdown-sort'
                                 onSelect = {
                                     (value: string) => {
