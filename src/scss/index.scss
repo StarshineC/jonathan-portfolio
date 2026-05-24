@@ -20,7 +20,10 @@ button {
 
 #main {
     background-color: $color-background-1;
-    margin-top: $nav-height;
+    margin-top: 0;
+    @media screen and (min-width: $width-tablet) {
+        margin-top: $nav-height;
+    }
 }
 #about {
     background-color: $color-background-2;
@@ -37,6 +40,9 @@ button {
 
 #main, #about, #experience, #projects, #contact {
     scroll-margin-top: $nav-height;
+    @media screen and (max-width: $width-tablet) {
+        scroll-margin-top: 0;
+    }
 }
 
 
