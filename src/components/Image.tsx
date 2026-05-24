@@ -1,5 +1,6 @@
 import { useState } from "react";
-import ImageLoading from "./../assets/img/loading.svg";
+// import ImageLoading from "./../assets/img/loading.svg";
+import { IconLoading } from "./Icon.tsx";
 
 import './../scss/Image.scss';
 
@@ -22,11 +23,12 @@ export default function Image(
         <div className={style}>
             {
                 isLoading &&
-                <img className="loading-spinner" src={ImageLoading} alt="Loading..." />
+                <IconLoading className="loading-spinner" />
             }
             {
                 loadingError &&
                 <p>Error loading image.</p>
+
             }
             {
                 !loadingError &&
