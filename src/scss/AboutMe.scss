@@ -11,9 +11,10 @@
     gap: 20px;
 
     div {
-        border: solid 1px maroon;
+        background-color: rgb(255, 251, 231);
         padding: 10px;
         flex: 1;
+        @include ticket-shape();
 
         h3, ul {
             text-align: center;
