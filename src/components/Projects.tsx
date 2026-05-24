@@ -74,8 +74,7 @@ export default function Projects() {
                 <p>Some of the projects I made!</p>
 
                 <div
-                    className = 'most-recent'
-                    style = {{ display: showAll ? "none" : "flex" }}
+                    className = {'most-recent' + (showAll ? " closed" : " open")}
                     tabIndex={ showAll ? -1 : 0 }
                 >
                     {
@@ -107,8 +106,7 @@ export default function Projects() {
 
                 <div className = 'all-projects-container-outer'>
                     <div 
-                        className = 'all-projects-container-inner'
-                        style = {{ display: showAll ? "block" : "none" }}
+                        className = {'all-projects-container-inner' + (showAll ? " open" : " closed")}
                         tabIndex={ showAll ? -1 : 0 }
                     >
                         
