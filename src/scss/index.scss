@@ -30,6 +30,11 @@ html {
     background-color: $color-background-5;
 }
 
+#main, #about, #experience, #projects, #contact {
+    scroll-margin-top: $nav-height;
+}
+
+
 
 .visible-desktop {
     display: block;
