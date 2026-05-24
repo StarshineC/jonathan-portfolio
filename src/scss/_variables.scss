@@ -40,6 +40,7 @@ $nav-height: 60px;
     width: min(90vw, $width-desktop);
     width: min(90dvw, $width-desktop);
     margin-inline: auto;
+    padding: 2rem 0;
 }
 
 // Super Cool Ticket Shape
@@ -61,4 +62,8 @@ $nav-height: 60px;
     }
     mask-composite: intersect;
     -webkit-mask-composite: destination-in; // I don't have an Apple modern enough to test this lol.
+    padding: calc($corner-radius-mobile * 2) $corner-radius-mobile;
+    @media screen and (min-width: $width-tablet) {
+        padding: calc($corner-radius * 2) $corner-radius;
+    }
 }

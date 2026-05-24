@@ -6,7 +6,6 @@
 
     .experience-entry {
         background-color: white;
-        padding: 2rem 1rem;
         @include ticket-shape();
 
         .references {
