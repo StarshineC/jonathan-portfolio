@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import ImageLoading from "./../assets/img/loading.svg";
-import { IconLoading } from "./Icon.tsx";
+import { IconLoading, IconBrokenImage } from "./Icon.tsx";
 
 import './../scss/Image.scss';
 
@@ -27,7 +27,8 @@ export default function Image(
             }
             {
                 loadingError &&
-                <p>Error loading image.</p>
+                <IconBrokenImage className="broken-image" />
+                // <p>Error loading image.</p>
 
             }
             {

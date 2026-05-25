@@ -25,3 +25,13 @@
     }
     color: blue;
 }
+
+.broken-image {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: blue;
+}
