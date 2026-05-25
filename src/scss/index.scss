@@ -9,6 +9,10 @@ html {
     background-color: $color-background-nav;
 }
 
+p, li {
+    @include font-body;
+}
+
 button {
     @include hover-pointer;
     border: none;
