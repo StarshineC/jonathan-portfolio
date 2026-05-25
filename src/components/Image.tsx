@@ -33,7 +33,10 @@ export default function Image(
             {
                 !loadingError &&
                 <img
-                    className={isFill ? "inner-image inner-image-fill" : "inner-image"}
+                    className={
+                        "inner-image" + 
+                        (isFill ? " inner-image-fill" : "")
+                    }
                     src={src}
                     alt={isLoading ? "" : alt}
                     onClick={onClick}

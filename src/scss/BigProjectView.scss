@@ -13,6 +13,7 @@
 
 .big-project-view {
     position: fixed;
+    box-sizing: border-box;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -20,8 +21,9 @@
     height: 100%;
     background-color: rgb(255, 206, 206);
     z-index: 1000;
-
-    @media (min-width: $width-tablet) {
+    
+    @media screen and (min-width: $width-tablet) {
+        @include ticket-shape(25px, 25px);
         width: 80%;
         height: 90%;
     }

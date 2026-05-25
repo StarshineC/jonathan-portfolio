@@ -58,7 +58,7 @@ $transition-duration: 0.3s;
 // Super Cool Ticket Shape
 @mixin ticket-shape(
     $corner-radius: 25px,
-    $corner-radius-mobile: calc($corner-radius / 2)
+    $corner-radius-mobile: calc($corner-radius / 2),
     ) {
     mask-image: 
         radial-gradient(circle at 0 0, transparent $corner-radius-mobile, black $corner-radius-mobile),
