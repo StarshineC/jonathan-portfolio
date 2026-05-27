@@ -11,7 +11,7 @@ export default function App() {
 			<NavigationBar
 				links = {
 					[
-						{ id: "main", label: "Top" },
+						{ id: "main", label: "Hello" },
 						{ id: "about", label: "About" },
 						{ id: "experience", label: "Experience" },
 						{ id: "projects", label: "Projects" },
@@ -20,7 +20,7 @@ export default function App() {
 				}
 			/>
 
-			<h1 id='main'>Temporary header</h1>
+			<h1 id='main'>Jonathan Renan Esponilla</h1>
 
 			<AboutMe/>
 

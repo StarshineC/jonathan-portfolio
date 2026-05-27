@@ -5,11 +5,13 @@
     }
 
     .experience-entry {
-        background-color: white;
+        background-color: $color-text-1;
+        color: $color-background-3;
         @include ticket-shape();
 
         .references {
             background-color: $color-background-3;
+            color: $color-text-1;
             border-radius: 0.5rem;
             padding: 1rem;
             display: flex;

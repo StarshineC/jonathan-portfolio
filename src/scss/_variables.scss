@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+PE:wght@100..400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comme:wght@100..900&display=swap');
 
-@mixin font-header($font-size: 2rem) {
+@mixin font-header($font-size: 3rem) {
     font-family: 'Playwrite PE', cursive;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -13,7 +13,7 @@
 @mixin font-body($font-size: 1rem) {
     font-family: "Comme", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
     font-size: $font-size;
 }
@@ -25,12 +25,20 @@
 $width-tablet: 768px;
 $width-desktop: 1024px;
 
-$color-background-nav: #333;
-$color-background-1: #FFE2A8;
-$color-background-2: #FFBB9C;
-$color-background-3: #DE8FAB;
-$color-background-4: #A48CBA;
-$color-background-5: #7D82A9;
+$color-background-nav: #000000;
+// $color-background-1: #FFE2A8;
+// $color-background-2: #FFBB9C;
+// $color-background-3: #DE8FAB;
+// $color-background-4: #A48CBA;
+// $color-background-5: #7D82A9;
+
+$color-background-1: #e9ad0a;
+$color-background-2: #eb6a2e;
+$color-background-3: #c02b61;
+$color-background-4: #54267c;
+$color-background-5: #181f5c;
+
+$color-text-1: #FFF4DE;
 
 
 $nav-height: 60px;
