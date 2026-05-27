@@ -50,6 +50,33 @@ button {
     color: $color-text-1;
 }
 
+.divider-5,
+.divider-4,
+.divider-3,
+.divider-2 {
+    width: 100vw;
+    width: 100dvw;
+    margin-bottom: -5px;
+    margin-top: -2rem;
+}
+
+.divider-5 {
+    color: $color-background-5;
+    background-color: $color-background-4;
+}
+.divider-4 {
+    color: $color-background-4;
+    background-color: $color-background-3;
+}
+.divider-3 {
+    color: $color-background-3;
+    background-color: $color-background-2;
+}
+.divider-2 {
+    color: $color-background-2;
+    background-color: $color-background-1;
+}
+
 
 
 .visible-desktop {
