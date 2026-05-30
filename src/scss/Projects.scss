@@ -10,6 +10,7 @@
 
     .most-recent {
         display: flex;
+        position: relative;
         flex-direction: column;
         gap: 20px;
         @media screen and (min-width: $width-tablet) {
@@ -109,7 +110,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 0;
+        z-index: -1;
     }
 
     .show-all-button {

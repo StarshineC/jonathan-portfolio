@@ -83,7 +83,7 @@ export default function Projects() {
                         .map(project => (
                             <button
                                 key = {"projects-" + project.id}
-                                onClick={ () => {
+                                onClick = { () => {
                                     console.log("Clicked " + project.name);
                                     setBigProjectView({
                                         isVisible: true,
@@ -94,11 +94,17 @@ export default function Projects() {
                                         aisummary: project.aisummary,
                                         id: project.id
                                     });
-                                }}
+                                } }
                             >
                                 <p>{fixQuotes(project.name)}</p>
-                                <p>{project.timelabel}</p>
+                                <p>{fixQuotes(project.timelabel)}</p>
                                 <p>{project.aiuse}</p>
+                                <Image
+                                    src={"/assets/img-projects/thumb-" + project.id + ".webp"}
+                                    alt={project.name}
+                                    style="project-image"
+                                    isFill={true}
+                                />
                             </button>
                         ))
                     }
