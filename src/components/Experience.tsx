@@ -53,8 +53,8 @@ function ExperienceEntry({ entry }: PropsExperienceEntry) {
             className="experience-entry"
         >
             <h3>{entry.company}</h3>
-            <p>{entry.location} | {entry.role} | {entry.time}</p>
-            <p>{entry.description}</p>
+            <p className = "key-info">{entry.location} | {entry.role} | {entry.time}</p>
+            <p className = "description">{entry.description}</p>
             <div className="references">
                 {
                     entry.references.map( (ref) => (
@@ -87,37 +87,39 @@ interface PropsReference {
 function Reference({ name, role, contacts }: PropsReference) {
     return (
         <div>
-            <p className = "visible-desktop">{name} | {role}</p>
-            <p className = "visible-mobile">{name}<br/>{role}</p>
-            {
-                contacts.map( (contact) => (
-                    <p
-                        key={
-                            "contact-" +
-                            contact.info
-                        }
-                    >
-                        {contact.method + ": "}
-                        <a 
-                            href= {
-                                contact.method === "Email" ? 
-                                ("mailto:" + contact.info) : 
-                                contact.method === "Phone" ?
-                                ("tel:" + contact.info) :
+            <h4 className = "visible-desktop">{name} | {role}</h4>
+            <h4 className = "visible-mobile">{name}<br/>{role}</h4>
+            <ul>
+                {
+                    contacts.map( (contact) => (
+                        <li
+                            key={
+                                "contact-" +
                                 contact.info
                             }
-                            target="_blank"
-                            rel="noopener noreferrer"
                         >
-                            {
-                                contact.method === "Phone" ? 
-                                contact.readable :
-                                removeLinkPrefix(contact.info)
-                            }
-                        </a>
-                    </p>
-                ))
-            }
+                            {contact.method + ": "}
+                            <a 
+                                href= {
+                                    contact.method === "Email" ? 
+                                    ("mailto:" + contact.info) : 
+                                    contact.method === "Phone" ?
+                                    ("tel:" + contact.info) :
+                                    contact.info
+                                }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {
+                                    contact.method === "Phone" ? 
+                                    contact.readable :
+                                    removeLinkPrefix(contact.info)
+                                }
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
         </div>
     );
 }

@@ -13,13 +13,6 @@
                     { "method": "Email", "info": "framingham_franklin@ikumon.com" },
                     { "method": "Phone", "info": "+15088750552", "readable": "(508) 875-0552"}
                 ]
-            },
-            {
-                "name": "Fake Reference",
-                "role": "None lol",
-                "contact": [
-                    { "method": "Website", "info": "https://www.kumon.com/framingham/reading-program"}
-                ]
             }
         ]
     }
