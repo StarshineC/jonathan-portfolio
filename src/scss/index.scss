@@ -9,6 +9,10 @@ html {
     background-color: $color-background-nav;
 }
 
+h2 {
+    text-align: center;
+}
+
 p, li {
     @include font-body;
 }
@@ -48,6 +52,7 @@ button {
         scroll-margin-top: 0;
     }
     color: $color-text-1;
+    padding-top: 1rem;
 }
 
 .divider-5,
@@ -57,7 +62,7 @@ button {
     width: 100vw;
     width: 100dvw;
     margin-bottom: -5px;
-    margin-top: -2rem;
+    // margin-top: -2rem
 }
 
 .divider-5 {
