@@ -1,4 +1,5 @@
 
+import Hero from "./components/Hero.tsx";
 import AboutMe from "./components/AboutMe.tsx";
 import Contact from "./components/Contact.tsx";
 import Experience from "./components/Experience.tsx";
@@ -21,9 +22,8 @@ export default function App() {
 				}
 			/>
 
-			<h1 id='main'>Jonathan Renan Esponilla</h1>
+			<Hero/>
 
-			{/* <Divider2/> */}
 			<AboutMe/>
 
 			<Divider3/>
