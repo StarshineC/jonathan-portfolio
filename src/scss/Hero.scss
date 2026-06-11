@@ -19,6 +19,7 @@
 
     img {
         
+        aspect-ratio: 1 / 1;
         background-color: white;
 
         -webkit-user-select: none; /* Safari */
@@ -49,7 +50,6 @@
 
         img {
             flex: 1;
-            aspect-ratio: 1 / 1;
             max-width: 100%;
             height: auto;
         }
