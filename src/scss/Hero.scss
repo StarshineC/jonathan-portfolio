@@ -7,10 +7,19 @@
 
     div {
         text-align: center;
+        padding: 1rem;
+
+        h1 {
+            @include font-header;
+            line-height: 1.3em;
+            padding: 0.25em 0 0.5em;
+        }
+
     }
 
     img {
-
+        
+        background-color: white;
 
         -webkit-user-select: none; /* Safari */
         -ms-user-select: none;     /* IE 10 and Edge */
@@ -18,7 +27,7 @@
         
         /* Prevents the ghost image when dragging */
         -webkit-user-drag: none;
-        // user-drag: none; (Unavailable rn)
+        // user-drag: none; // (Unavailable rn)
     }
 
     @media screen and (min-width: $width-tablet) {
@@ -39,7 +48,6 @@
         }
 
         img {
-            background-color: white;
             flex: 1;
             aspect-ratio: 1 / 1;
             max-width: 100%;
