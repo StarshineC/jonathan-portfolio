@@ -22,6 +22,19 @@ export default function App() {
 				}
 			/>
 
+			<section
+				style = {{
+					marginTop: "60px",
+					marginBottom: "-60px",
+					backgroundColor: "white",
+					textAlign: "center",
+					padding: "20px",
+					borderBottom: "5px solid black"
+				}}
+			>
+				<p>Website Under Construction! Sorry if things look ugly.</p>
+			</section>
+
 			<Hero/>
 
 			<AboutMe/>
