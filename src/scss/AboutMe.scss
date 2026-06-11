@@ -1,4 +1,9 @@
 #about .content-strip {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
     h2 {
         @include font-header;
     }

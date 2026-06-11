@@ -10,6 +10,7 @@ export default function Experience() {
         <section id="experience">
             <div className="content-strip">
                 <h2>Experience</h2>
+                <p className="description">Places I've worked.</p>
                 {
                     data.map( (entry) => (
                         <ExperienceEntry

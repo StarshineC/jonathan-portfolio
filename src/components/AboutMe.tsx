@@ -8,7 +8,10 @@ export default function AboutMe() {
         <div id = "about">
             <div className='content-strip'>
                 <h2>About Me</h2>
-                <p style={{ whiteSpace: "pre-line" }}>{data.description}</p>
+                <p
+                    className='description'
+                    style={{ whiteSpace: "pre-line" }}
+                >{data.description}</p>
                 <div className='list-cards'>
                     <ListCard
                         title = "Skills"

@@ -71,7 +71,7 @@ export default function Projects() {
             <div className = "content-strip">
 
                 <h2>Projects</h2>
-                <p>Some of the projects I made!</p>
+                <p className="description">Some of the projects I made!</p>
 
                 <div
                     className = {'most-recent' + (showAll ? " closed" : " open")}
